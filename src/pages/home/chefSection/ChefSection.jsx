@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 const ChefSection = () => {
   const [chef, setChef] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/chef")
+    fetch("https://chef-recipes-hut-prodipdev.vercel.app/chef")
       .then((res) => res.json())
       .then((data) => setChef(data))
       .catch((error) => console.log(error));

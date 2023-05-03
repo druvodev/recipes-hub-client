@@ -6,7 +6,7 @@ const PopularRecipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [displayRecipes, setDisplayRecipes] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/recipes")
+    fetch("https://chef-recipes-hut-prodipdev.vercel.app/recipes")
       .then((res) => res.json())
       .then((data) => setRecipes(data))
       .catch((error) => console.log(error));
