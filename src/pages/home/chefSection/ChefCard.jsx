@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const ChefCard = ({ chef }) => {
   const {
@@ -11,6 +12,7 @@ const ChefCard = ({ chef }) => {
     likes,
     picture,
   } = chef;
+  const { setChef } = useContext(AuthContext);
   return (
     <div className="w-80 border border-amber-200 shadow shadow-amber-400 pb-5 rounded-md text-gray-800 ml-6">
       <div
@@ -42,6 +44,7 @@ const ChefCard = ({ chef }) => {
         </p>
         <Link
           to={`/chef/${chef_id}`}
+          onClick={() => setChef(chef)}
           className="px-3 py-1 border border-amber-300 hover:bg-amber-500 hover:text-white hover:underline underline-offset-4 duration-200 rounded-md"
         >
           View Recipes

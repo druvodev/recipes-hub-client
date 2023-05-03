@@ -5,7 +5,8 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
 
 const Registration = () => {
-  const { createUser, signInWithGoogle } = useContext(AuthContext);
+  const { createUser, signInWithGoogle, signInWithGithub } =
+    useContext(AuthContext);
   const [firstIsShow, setFirstIsShow] = useState(false);
   const [secondIsShow, setSecondIsShow] = useState(false);
   const [isTermsChecked, setIsTermsChecked] = useState(false);
@@ -219,7 +220,10 @@ const Registration = () => {
               alt="logo"
             />
           </li>
-          <li className="w-8 bg-gray-200 p-1 rounded-full">
+          <li
+            onClick={() => signInWithGithub()}
+            className="w-8 bg-gray-200 p-1 rounded-full"
+          >
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"
               alt="logo"
