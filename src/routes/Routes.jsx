@@ -6,6 +6,7 @@ import ChefRecipes from "../pages/chefRecipes/ChefRecipes";
 import Login from "../pages/login/Login";
 import Registration from "../pages/registration/Registration";
 import PrivateRoute from "./PrivateRoute";
+import Blog from "../pages/Blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,12 @@ const router = createBrowserRouter([
           fetch(
             `https://chef-recipes-hut-prodipdev.vercel.app/recipe/${params.id}`
           ),
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+        loader: () =>
+          fetch("https://chef-recipes-hut-prodipdev.vercel.app/questions"),
       },
       {
         path: "/login",
