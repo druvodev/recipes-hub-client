@@ -3,7 +3,14 @@ import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const ChefCard = ({ chef }) => {
-  const { chef_name, years_of_experience, num_recipes, likes, picture } = chef;
+  const {
+    chef_id,
+    chef_name,
+    years_of_experience,
+    num_recipes,
+    likes,
+    picture,
+  } = chef;
   return (
     <div className="w-80 border border-amber-200 shadow shadow-amber-400 pb-5 rounded-md text-gray-800 ml-6">
       <div
@@ -34,7 +41,7 @@ const ChefCard = ({ chef }) => {
           <span className="font-semibold">{num_recipes} items</span>
         </p>
         <Link
-          to={"/"}
+          to={`/chef/${chef_id}`}
           className="px-3 py-1 border border-amber-300 hover:bg-amber-500 hover:text-white hover:underline underline-offset-4 duration-200 rounded-md"
         >
           View Recipes

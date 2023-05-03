@@ -5,7 +5,7 @@ import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 const RecipeCard = ({ recipe }) => {
   const [favorite, setFavorite] = useState(false);
-  const { recipe_name, rating, picture } = recipe;
+  const { recipe_id, recipe_name, rating, picture } = recipe;
   const StarDrawing = (
     <path
       d="M398.799,141.794c-43.394-3.977-86.776-6.52-130.158-8.418C258.835,99.302,242.633-4.751,193.173,0.169
@@ -24,7 +24,7 @@ const RecipeCard = ({ recipe }) => {
   };
 
   return (
-    <div className="w-full border border-amber-100 shadow pb-2 rounded-md text-gray-800 ml-6">
+    <div className="w-full border border-amber-100 shadow pb-2 rounded-md text-gray-800">
       <div
         className="h-56 lg:h-60 xl:h-72 w-full bg-cover bg-center rounded-t-md"
         style={{
@@ -54,8 +54,8 @@ const RecipeCard = ({ recipe }) => {
           <span>{rating}</span>
         </div>
         <Link
-          to={"/"}
-          className="px-3 pt-1 pb-2 border border-amber-500 hover:bg-amber-500 hover:text-white font-semibold hover:underline underline-offset-4 duration-200 rounded-md shadow-md"
+          to={`/recipe/${recipe_id}`}
+          className="px-3 pt-1 pb-2 border border-amber-500 hover:bg-amber-500 hover:text-white font-semibold hover:underline underline-offset-2 duration-200 rounded-md shadow-md"
         >
           Details
         </Link>
