@@ -4,7 +4,7 @@ const CateringSection = () => {
   return (
     <div className="grid md:grid-cols-5 items-center justify-center gap-10 mt-10 px-5 sm:px-10 py-10 bg-amber-50">
       <img
-        className="md:col-span-2"
+        className="md:col-span-2 mx-auto"
         src="https://i.ibb.co/RQyMdtb/services-bg.png"
         alt=""
       />
