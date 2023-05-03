@@ -6,15 +6,18 @@ import { AuthContext } from "../../../providers/AuthProvider";
 const PopularRecipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [displayRecipes, setDisplayRecipes] = useState([]);
-  const { loading, setLoading } = useContext(AuthContext);
+  const { loading } = useContext(AuthContext);
 
   useEffect(() => {
     fetch("https://chef-recipes-hut-prodipdev.vercel.app/recipes")
       .then((res) => res.json())
       .then((data) => setRecipes(data))
       .catch((error) => console.log(error));
+  }, []);
+
+  useEffect(() => {
     setDisplayRecipes(recipes.slice(0, 8));
-  }, [loading]);
+  }, [recipes]);
 
   const handleDisplayRecipes = () => {
     if (displayRecipes.length > 8) {
