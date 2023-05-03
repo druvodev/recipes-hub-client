@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
+import toast, { Toaster } from "react-hot-toast";
 
 const RecipeCard = ({ recipe }) => {
-  const [favorite, setFavorite] = useState(false);
+  const [favorite, setFavorite] = useState(true);
   const { recipe_id, recipe_name, rating, picture } = recipe;
   const StarDrawing = (
     <path
@@ -23,25 +24,36 @@ const RecipeCard = ({ recipe }) => {
     inactiveFillColor: "#fae0b6",
   };
 
+  const handleFavorite = () => {
+    if (favorite) {
+      setFavorite(false);
+      toast.success("Successfully add!");
+    } else {
+      toast.error("You have already add!");
+    }
+  };
+
   return (
     <div className="w-full border border-amber-100 shadow pb-2 rounded-md text-gray-800">
       <div
-        className="h-56 lg:h-60 xl:h-72 w-full bg-cover bg-center rounded-t-md"
+        className="h-56 lg:h-60 xl:h-72 w-full bg-cover bg-center rounded-t-md relative"
         style={{
           backgroundImage: `url("${
             picture ||
             "https://i.ibb.co/6H8F3BW/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png"
           }")`,
         }}
-      ></div>
+      >
+        <Toaster />
+      </div>
       <div className="m-2">
         <div className="flex justify-between items-center gap-5">
           <h5 className="text-xl font-semibold mt-2 mb-1">{recipe_name}</h5>
           <span
             className="text-2xl bg-rose-100 text-rose-500 p-2 rounded-full shadow-inner"
-            onClick={() => setFavorite(!favorite)}
+            onClick={() => handleFavorite()}
           >
-            {favorite ? <FaHeart /> : <FaRegHeart />}
+            {favorite ? <FaRegHeart /> : <FaHeart />}
           </span>
         </div>
         <div className="mt-1 mb-5 flex gap-1 items-center">
@@ -55,7 +67,7 @@ const RecipeCard = ({ recipe }) => {
         </div>
         <Link
           to={`/recipe/${recipe_id}`}
-          className="px-3 pt-1 pb-2 border border-amber-500 hover:bg-amber-500 hover:text-white font-semibold hover:underline underline-offset-2 duration-200 rounded-md shadow-md"
+          className="px-5 pt-1 pb-2 border border-amber-500 hover:bg-amber-500 hover:text-white font-semibold hover:underline underline-offset-2 duration-200 rounded-md shadow-md"
         >
           Details
         </Link>

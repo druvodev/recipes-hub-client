@@ -9,7 +9,7 @@ const CateringSection = () => {
         alt=""
       />
       <div className="md:col-span-3">
-        <h4 className="text-xl font-semibold text-amber-500 underline underline-offset-2">
+        <h4 className="text-2xl tracking-wide font-semibold text-amber-500 underline underline-offset-2">
           Catering
         </h4>
         <h2 className="text-2xl font-semibold">

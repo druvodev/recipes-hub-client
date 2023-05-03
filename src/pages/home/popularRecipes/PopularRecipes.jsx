@@ -36,7 +36,7 @@ const PopularRecipes = () => {
           <h2 className="text-3xl font-bold text-center">
             Most popular recipes
           </h2>
-          <p className="text-lg text-center mt-2">
+          <p className="text-lg text-center mx-auto mt-2 w-3/5">
             Mock Turtle's heavy sobs. Lastly, she pictured to herself that
             perhaps it was quite tired of being all alone here!' As she said to
             herself; 'I should like to see what was going on, as she could do.

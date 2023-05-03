@@ -14,7 +14,7 @@ const Navbar = () => {
           Recipes<span className="text-amber-500">Hub</span>
         </p>
       </Link>
-      <ul className="flex justify-between gap-4 text-lg">
+      <ul className="flex justify-between gap-5 text-lg font-semibold">
         <NavLink
           to={"/"}
           className={({ isActive }) =>
@@ -32,18 +32,22 @@ const Navbar = () => {
           Blog
         </NavLink>
       </ul>
-      <div className="flex gap-2 items-center">
+      <div className="flex gap-5 items-center">
         {user ? (
           <>
             <img
               className="w-10 h-10 rounded-full"
-              src={user?.photoURL}
+              src={
+                user.photoURL
+                  ? user.photoURL
+                  : "https://i.ibb.co/Ws1r9fp/images.png"
+              }
               alt="avatar"
               title={user?.displayName}
             />
             <span
               onClick={() => logOut()}
-              className="bg-rose-50 text-rose-500 hover:bg-rose-100 w-10 h-10 text-2xl rounded-full flex items-center justify-center cursor-pointer"
+              className="bg-rose-50 text-rose-500 hover:bg-rose-100 w-10 h-10 text-2xl rounded-full flex items-center justify-center cursor-pointer shadow-md"
             >
               <FiLogOut />
             </span>

@@ -45,7 +45,7 @@ const ChefCard = ({ chef }) => {
         <Link
           to={`/chef/${chef_id}`}
           onClick={() => setChef(chef)}
-          className="px-3 py-1 border border-amber-300 hover:bg-amber-500 hover:text-white hover:underline underline-offset-4 duration-200 rounded-md"
+          className="px-3 pt-1 pb-2 border border-amber-300 hover:bg-amber-500 hover:text-white hover:underline underline-offset-4 duration-200 rounded-md"
         >
           View Recipes
         </Link>
