@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const ChefCard = ({ chef }) => {
   const { chef_name, years_of_experience, num_recipes, likes, picture } = chef;
   return (
-    <div className="w-80 border border-amber-200 shadow shadow-amber-400 pb-5 rounded-md text-gray-800 ml-10">
+    <div className="w-80 border border-amber-200 shadow shadow-amber-400 pb-5 rounded-md text-gray-800 ml-6">
       <div
         className="h-52 w-full bg-cover bg-center rounded-t-md relative"
         style={{
