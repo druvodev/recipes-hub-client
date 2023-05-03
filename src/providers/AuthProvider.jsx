@@ -59,10 +59,12 @@ const AuthProvider = ({ children }) => {
     //   Stop observing when unmounting
     return () => unsubscribe();
   }, []);
+  console.log(user);
 
   const authInfo = {
     user,
     loading,
+    setLoading,
     loginUser,
     chef,
     setChef,

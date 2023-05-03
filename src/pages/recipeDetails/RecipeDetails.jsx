@@ -20,15 +20,15 @@ const RecipeDetails = () => {
         <div className="mt-5">
           <h5 className="text-2xl font-semibold">Ingredients</h5>
           <ul className="ml-5 list-disc">
-            {ingredients.map((item) => (
-              <li>{item}</li>
+            {ingredients.map((item, index) => (
+              <li key={index}>{item}</li>
             ))}
           </ul>
         </div>
         <div className="mt-5">
           <h5 className="text-2xl font-semibold">Directions</h5>
-          {cookingMethodLines.map((method) => (
-            <p>{method}</p>
+          {cookingMethodLines.map((method, index) => (
+            <p key={index}>{method}</p>
           ))}
         </div>
       </div>
