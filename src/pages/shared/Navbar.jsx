@@ -1,11 +1,16 @@
 import React, { useContext, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FiLogOut } from "react-icons/fi";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [login, setLogin] = useState(true);
+  const location = useLocation();
+  const [login, setLogin] = useState(location.pathname === "/login");
+
+  const toggleLogin = () => {
+    setLogin(!login);
+  };
 
   return (
     <nav className="flex justify-between items-center gap-5 py-3 px-10 shadow">
@@ -52,9 +57,9 @@ const Navbar = () => {
               <FiLogOut />
             </span>
           </>
-        ) : login ? (
+        ) : !login ? (
           <Link
-            onClick={() => setLogin(!login)}
+            onClick={() => toggleLogin()}
             to={"/login"}
             className="bg-amber-500 text-white font-semibold rounded-md px-3 py-1 text-lg"
           >
@@ -62,7 +67,7 @@ const Navbar = () => {
           </Link>
         ) : (
           <Link
-            onClick={() => setLogin(!login)}
+            onClick={() => toggleLogin()}
             to={"/registration"}
             className="border border-amber-500 hover:bg-amber-500 hover:text-white duration-200 font-semibold rounded-md px-3 py-1 text-lg"
           >
