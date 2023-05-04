@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { CgDanger } from "react-icons/cg";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
@@ -203,7 +204,11 @@ const Registration = () => {
           </div>
         </div>
         <p className="h-6">
-          {error && <small className="text-red-500">{error}</small>}
+          {error && (
+            <small className="text-red-500 flex items-center gap-1">
+              <CgDanger /> {error}
+            </small>
+          )}
         </p>
         <button
           className="w-full bg-amber-500 text-white text-sm font-bold py-2 px-4 my-2 rounded-md hover:bg-amber-600 transition duration-300"
