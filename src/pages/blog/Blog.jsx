@@ -6,16 +6,6 @@ const Blog = () => {
   const questions = useLoaderData();
   const ref = useRef();
 
-  const generatePdf = () => {
-    const doc = new jsPDF();
-    doc.html(ref.current, {
-      callback: function () {
-        doc.save("code-example.pdf");
-      },
-      html2canvas: { scale: 0.5 },
-    });
-  };
-
   return (
     <>
       <div className="bg-rose-100">

@@ -8,6 +8,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 const RecipeCard = ({ recipe }) => {
   const [favorite, setFavorite] = useState(true);
   const { recipe_id, recipe_name, rating, picture } = recipe;
+
   const StarDrawing = (
     <path
       d="M398.799,141.794c-43.394-3.977-86.776-6.52-130.158-8.418C258.835,99.302,242.633-4.751,193.173,0.169
@@ -18,13 +19,14 @@ const RecipeCard = ({ recipe }) => {
             C426.818,168.817,420.858,143.814,398.799,141.794z"
     />
   ); // Source: https://www.svgrepo.com/svg/118939/star
-
+  // Rating star custom styles
   const customStyles = {
     itemShapes: StarDrawing,
     activeFillColor: "#f5b042",
     inactiveFillColor: "#fae0b6",
   };
 
+  // Recipe card favorite button handle
   const handleFavorite = () => {
     if (favorite) {
       setFavorite(false);

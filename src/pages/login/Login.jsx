@@ -27,6 +27,7 @@ const Login = () => {
       }, 5000);
     }
 
+    // login user with email and password and error checking
     loginUser(email, password)
       .then(() => {
         form.reset();

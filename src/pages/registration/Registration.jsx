@@ -50,6 +50,7 @@ const Registration = () => {
       return setError("Please agree to the terms and conditions!");
     }
 
+    // Create new user with email
     createUser(email, password)
       .then((result) => {
         updateName(result.user, name, photo);
@@ -60,6 +61,7 @@ const Registration = () => {
         console.log(error.message);
         setLoading(false);
       });
+    // update user name and photo url
     const updateName = (user, userName, profilePhoto) => {
       updateProfile(user, {
         displayName: userName,

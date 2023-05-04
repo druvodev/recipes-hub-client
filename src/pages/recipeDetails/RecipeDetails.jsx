@@ -3,9 +3,10 @@ import { useLoaderData } from "react-router-dom";
 import { scrollTop } from "../../utils/utils";
 
 const RecipeDetails = () => {
-  const { recipe_name, ingredients, cooking_method, rating, picture } =
-    useLoaderData();
+  const { recipe_name, ingredients, cooking_method, picture } = useLoaderData();
+  // split cooking methods string by \n
   const cookingMethodLines = cooking_method.split("\n");
+
   return (
     <div
       className="sm:my-10 sm:pr-10 grid items-center sm:grid-cols-5 gap-10"

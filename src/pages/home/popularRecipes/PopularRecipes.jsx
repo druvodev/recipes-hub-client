@@ -15,10 +15,12 @@ const PopularRecipes = () => {
       .catch((error) => console.log(error));
   }, []);
 
+  // Initially showed 8 recipes card
   useEffect(() => {
     setDisplayRecipes(recipes.slice(0, 8));
   }, [recipes]);
 
+  // When toggle arrow button then showed 8 or all recipes cards
   const handleDisplayRecipes = () => {
     if (displayRecipes.length > 8) {
       setDisplayRecipes(recipes.slice(0, 8));
@@ -26,6 +28,7 @@ const PopularRecipes = () => {
       setDisplayRecipes(recipes);
     }
   };
+
   return (
     <div id="popularRecipes" className="my-16 px-5 sm:px-10">
       {loading ? (
