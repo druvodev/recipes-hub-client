@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ChefCard from "./chefCard";
-import Marquee from "react-fast-marquee";
+import ChefCard from "./ChefCard";
 
 const ChefSection = () => {
   const [chef, setChef] = useState([]);
@@ -14,22 +13,10 @@ const ChefSection = () => {
     <div className="mt-10 px-5 sm:px-10">
       <h2 className="text-3xl font-bold text-center">Popular Chef</h2>
       <p className="text-lg text-center mt-2">GOOD FOOD || GOOD LIFE</p>
-      <div className="my-7 space-y-6">
-        <Marquee gradient={true} pauseOnHover={true} speed={25}>
-          {chef.map((chefBio) => (
-            <ChefCard key={chefBio.chef_id} chef={chefBio}></ChefCard>
-          ))}
-        </Marquee>
-        <Marquee
-          gradient={true}
-          pauseOnHover={true}
-          speed={25}
-          direction="right"
-        >
-          {chef.map((chefBio) => (
-            <ChefCard key={chefBio.chef_id} chef={chefBio}></ChefCard>
-          ))}
-        </Marquee>
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 mt-5">
+        {chef.map((chefBio) => (
+          <ChefCard key={chefBio.chef_id} chef={chefBio}></ChefCard>
+        ))}
       </div>
     </div>
   );

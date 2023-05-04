@@ -14,9 +14,9 @@ const ChefCard = ({ chef }) => {
   } = chef;
   const { setChef } = useContext(AuthContext);
   return (
-    <div className="w-80 border border-amber-200 shadow shadow-amber-400 pb-5 rounded-md text-gray-800 ml-6">
+    <div className="w-full border border-amber-200 shadow shadow-amber-400 pb-5 rounded-md text-gray-800">
       <div
-        className="h-52 w-full bg-cover bg-center rounded-t-md relative"
+        className="h-56 lg:h-60 xl:h-72 w-full bg-cover bg-center rounded-t-md relative"
         style={{
           backgroundImage: `url("${
             picture ||
