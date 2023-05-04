@@ -1,4 +1,5 @@
 import React from "react";
+import { scrollToTarget } from "../../../utils/utils";
 
 const Hero = () => {
   return (
@@ -12,7 +13,10 @@ const Hero = () => {
           Family Dinner, date night, brunches, parties, get-togethers and even
           meals for the entire week.
         </p>
-        <button className="mt-10 px-3 py-2 hover:bg-amber-500 border border-amber-500 text-white text-2xl shadow shadow-amber-500">
+        <button
+          onClick={() => scrollToTarget("popularRecipes")}
+          className="mt-10 px-3 py-2 hover:bg-amber-500 border border-amber-500 text-white text-2xl shadow shadow-amber-500"
+        >
           SEE OUR RECIPES
         </button>
       </div>

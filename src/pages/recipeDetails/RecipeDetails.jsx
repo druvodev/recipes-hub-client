@@ -1,12 +1,16 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import { scrollTop } from "../../utils/utils";
 
 const RecipeDetails = () => {
   const { recipe_name, ingredients, cooking_method, rating, picture } =
     useLoaderData();
   const cookingMethodLines = cooking_method.split("\n");
   return (
-    <div className="sm:my-10 sm:pr-10 grid items-center sm:grid-cols-5 gap-10">
+    <div
+      className="sm:my-10 sm:pr-10 grid items-center sm:grid-cols-5 gap-10"
+      onLoad={scrollTop()}
+    >
       <img
         className="w-full sm:col-span-2 sm:rounded-r-full"
         src={

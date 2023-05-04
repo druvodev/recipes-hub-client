@@ -27,7 +27,7 @@ const PopularRecipes = () => {
     }
   };
   return (
-    <div className="my-16 px-5 sm:px-10">
+    <div id="popularRecipes" className="my-16 px-5 sm:px-10">
       {loading ? (
         <div>Loading..</div>
       ) : (

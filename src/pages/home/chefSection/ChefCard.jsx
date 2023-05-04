@@ -3,6 +3,7 @@ import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { scrollTop } from "../../../utils/utils";
 
 const ChefCard = ({ chef }) => {
   const {
@@ -45,7 +46,9 @@ const ChefCard = ({ chef }) => {
         </p>
         <Link
           to={`/chef/${chef_id}`}
-          onClick={() => setChef(chef)}
+          onClick={() => {
+            setChef(chef), scrollTop();
+          }}
           className="px-3 pt-1 pb-2 border border-amber-300 hover:bg-amber-500 hover:text-white hover:underline underline-offset-4 duration-200 rounded-md"
         >
           View Recipes
