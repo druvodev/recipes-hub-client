@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const RecipeCard = ({ recipe }) => {
   const [favorite, setFavorite] = useState(true);
@@ -35,17 +36,14 @@ const RecipeCard = ({ recipe }) => {
 
   return (
     <div className="w-full border border-amber-100 shadow pb-2 rounded-md text-gray-800">
-      <div
-        className="h-56 lg:h-60 xl:h-72 w-full bg-cover bg-center rounded-t-md relative"
-        style={{
-          backgroundImage: `url("${
-            picture ||
-            "https://i.ibb.co/6H8F3BW/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png"
-          }")`,
-        }}
-      >
-        <Toaster />
-      </div>
+      <LazyLoadImage
+        src={
+          picture ||
+          "https://i.ibb.co/6H8F3BW/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png"
+        }
+        className="h-56 lg:h-60 xl:h-72 w-full rounded-t-md"
+        alt="Image"
+      />
       <div className="m-2">
         <div className="flex justify-between items-center gap-5">
           <h5 className="text-xl font-semibold mt-2 mb-1">{recipe_name}</h5>
