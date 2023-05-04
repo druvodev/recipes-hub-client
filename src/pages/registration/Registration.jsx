@@ -74,7 +74,7 @@ const Registration = () => {
       </h1>
       <form
         onSubmit={handleEmailRegister}
-        className="w-full max-w-lg mx-auto bg-white p-4 sm:p-8 rounded-md shadow-md"
+        className="w-full max-w-lg mx-auto bg-white p-4 sm:p-8 rounded-md sm:shadow-md"
       >
         <div className="mb-2">
           <label

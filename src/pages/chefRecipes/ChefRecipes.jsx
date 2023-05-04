@@ -12,7 +12,7 @@ const ChefRecipes = () => {
 
   return (
     <div className="mb-10">
-      <div className="bg-amber-50 flex gap-10 py-10 px-10">
+      <div className="bg-amber-50 flex flex-col sm:flex-row gap-10 py-10 px-5 sm:px-10">
         <div className="h-96 relative">
           <img
             className="h-full rounded-2xl shadow-md shadow-gray-400"
@@ -24,12 +24,12 @@ const ChefRecipes = () => {
           />
           <div className="text-5xl flex gap-1 items-center bg-rose-500 bg-opacity-60 w-fit text-teal-50 rounded px-5 py-3 absolute -bottom-5 -right-5">
             <FaHeart></FaHeart>
-            <small className="text-xl text-slate-600 font-semibold">
+            <small className="text-2xl text-slate-700 font-semibold">
               {likes}
             </small>
           </div>
         </div>
-        <div className="w-2/5">
+        <div className="sm:-2/5">
           <h5 className="text-3xl font-bold mb-3">{chef_name}</h5>
           <p className="text-lg">
             Experience:{" "}

@@ -52,7 +52,7 @@ const Login = () => {
       <h1 className="text-2xl font-bold mb-6 text-center">Login Account</h1>
       <form
         onSubmit={handleEmailLogin}
-        className="w-full max-w-lg mx-auto bg-white p-4 sm:p-8 rounded-md shadow-md"
+        className="w-full max-w-lg mx-auto bg-white p-4 sm:p-8 rounded-md sm:shadow-md"
       >
         <div className="mb-4">
           <label
