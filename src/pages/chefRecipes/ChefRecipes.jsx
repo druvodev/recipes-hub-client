@@ -43,7 +43,7 @@ const ChefRecipes = () => {
           <p>{bio}</p>
         </div>
       </div>
-      <h5 className="text-3xl font-semibold underline ml-5 sm:ml-10 mt-16">
+      <h5 className="text-2xl sm:text-3xl font-semibold underline ml-5 sm:ml-10 mt-16">
         Recipes List
       </h5>
       <div className="mt-4 px-5 sm:px-10 grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">

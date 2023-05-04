@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center absolute sticky sm:hidden left-0 top-0 z-50 bg-white w-full px-5 py-2">
+      <div className="flex justify-between items-center sticky sm:hidden left-0 top-0 z-50 bg-white w-full px-5 py-2">
         <Link to={"/"}>
           <p className="text-2xl font-bold" onClick={() => scrollTop()}>
             Recipes<span className="text-amber-500">Hub</span>

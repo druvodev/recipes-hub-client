@@ -16,14 +16,14 @@ const ChefCard = ({ chef }) => {
   } = chef;
   const { setChef } = useContext(AuthContext);
   return (
-    <div className="w-full border border-amber-200 shadow shadow-amber-400 pb-5 rounded-md text-gray-800">
+    <div className="w-full shadow-sm shadow-amber-200 pb-5 rounded-md text-gray-800">
       <div className="h-56 lg:h-60 xl:h-72 w-full rounded-t-md relative">
         <LazyLoadImage
           src={
             picture ||
             "https://i.ibb.co/6H8F3BW/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png"
           }
-          className="w-full h-full"
+          className="w-full h-full rounded-t-md"
           alt="Chef Avatar"
         />
         <div className="flex gap-1 items-center bg-rose-200 bg-opacity-60 w-fit text-rose-500 rounded p-1 absolute bottom-1 left-1">
