@@ -16,7 +16,10 @@ const ChefRecipes = () => {
         <div className="h-96 relative">
           <img
             className="h-full rounded-2xl shadow-md shadow-gray-400"
-            src={picture || ""}
+            src={
+              picture ||
+              "https://i.ibb.co/6H8F3BW/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png"
+            }
             alt="avatar"
           />
           <div className="text-5xl flex gap-1 items-center bg-rose-500 bg-opacity-60 w-fit text-teal-50 rounded px-5 py-3 absolute -bottom-5 -right-5">

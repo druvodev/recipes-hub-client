@@ -58,7 +58,7 @@ const AuthProvider = ({ children }) => {
     });
     //   Stop observing when unmounting
     return () => unsubscribe();
-  }, []);
+  }, [user]);
   console.log(user);
 
   const authInfo = {

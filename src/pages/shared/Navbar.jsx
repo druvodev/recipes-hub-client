@@ -32,8 +32,8 @@ const Navbar = () => {
           Blog
         </NavLink>
       </ul>
-      <div className="flex gap-5 items-center">
-        {user ? (
+      <div className="flex gap-3 items-center">
+        {user?.displayName ? (
           <>
             <img
               className="w-10 h-10 rounded-full"

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
 
@@ -11,6 +11,7 @@ const Registration = () => {
   const [secondIsShow, setSecondIsShow] = useState(false);
   const [isTermsChecked, setIsTermsChecked] = useState(false);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   // Automatic remove error message
   if (error) {
@@ -51,6 +52,7 @@ const Registration = () => {
     createUser(email, password)
       .then((result) => {
         updateName(result.user, name, photo);
+        navigate("/login");
         console.log(result.user);
       })
       .catch((error) => {

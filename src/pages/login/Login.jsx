@@ -4,7 +4,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
-  const { loginUser, signInWithGoogle, signInWithGithub } =
+  const { loginUser, signInWithGoogle, signInWithGithub, setLoading } =
     useContext(AuthContext);
   const [isShow, setIsShow] = useState(false);
   const [error, setError] = useState("");
@@ -21,7 +21,7 @@ const Login = () => {
 
     loginUser(email, password)
       .then(() => {
-        console.log("successfully login");
+        setLoading(false);
         form.reset();
         navigate(from, { replace: true });
       })
@@ -32,8 +32,8 @@ const Login = () => {
   const handleGoogleLogin = () => {
     signInWithGoogle()
       .then(() => {
+        setLoading(false);
         navigate(from, { replace: true });
-        console.log(from);
       })
       .catch((error) => setError(error.message));
   };
@@ -42,8 +42,8 @@ const Login = () => {
   const handleGithubLogin = () => {
     signInWithGithub()
       .then(() => {
+        setLoading(false);
         navigate(from, { replace: true });
-        console.log(from);
       })
       .catch((error) => setError(error.message));
   };
