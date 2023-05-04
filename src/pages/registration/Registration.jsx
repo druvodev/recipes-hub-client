@@ -6,7 +6,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
 
 const Registration = () => {
-  const { createUser, signInWithGoogle, signInWithGithub } =
+  const { createUser, signInWithGoogle, signInWithGithub, setLoading } =
     useContext(AuthContext);
   const [firstIsShow, setFirstIsShow] = useState(false);
   const [secondIsShow, setSecondIsShow] = useState(false);
@@ -33,21 +33,21 @@ const Registration = () => {
 
     // Check password validation
     if (!password || !confirmPassword) {
-      return setError("*Please enter password!");
+      return setError("Please enter password!");
     } else if (password !== confirmPassword) {
-      return setError("*Password doesn't match!");
+      return setError("Password doesn't match!");
     } else if (password) {
       const regex =
         /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])/;
       if (!regex.test(password)) {
-        return setError("*Enter a strong password!");
+        return setError("Enter a strong password!");
       } else if (password.length < 6) {
-        return setError("*Enter a password with at least 6 digits!");
+        return setError("Enter a password with at least 6 digits!");
       }
     }
     // Check terms and condition field
     if (!isTermsChecked) {
-      return setError("*Please agree to the terms and conditions!");
+      return setError("Please agree to the terms and conditions!");
     }
 
     createUser(email, password)
@@ -58,6 +58,7 @@ const Registration = () => {
       })
       .catch((error) => {
         console.log(error.message);
+        setLoading(false);
       });
     const updateName = (user, userName, profilePhoto) => {
       updateProfile(user, {
